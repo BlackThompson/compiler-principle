@@ -49,9 +49,9 @@ public class Main {
         final var productionCollector = new ProductionCollector(GrammarInfo.getBeginProduction());
         parser.registerObserver(productionCollector);
 
-        // Debug!!!!!!!!!!!!!!!!!!!!!!!!!!
-        parser.run();
-        productionCollector.dumpToFile(FilePathConfig.PARSER_PATH);
+//        // Debug!!!!!!!!!!!!!!!!!!!!!!!!!!
+//        parser.run();
+//        productionCollector.dumpToFile(FilePathConfig.PARSER_PATH);
 
         // 加入用作语义检查的 Observer
         final var semanticAnalyzer = new SemanticAnalyzer();
@@ -76,9 +76,9 @@ public class Main {
         FileUtils.writeFile(FilePathConfig.EMULATE_RESULT, emulator.execute().map(Objects::toString).orElse("No return value"));
 
         // 由 IR 生成汇编
-        final var asmGenerator = new AssemblyGenerator();
-        asmGenerator.loadIR(instructions);
-        asmGenerator.run();
-        asmGenerator.dump(FilePathConfig.ASSEMBLY_LANGUAGE_PATH);
+//        final var asmGenerator = new AssemblyGenerator();
+//        asmGenerator.loadIR(instructions);
+//        asmGenerator.run();
+//        asmGenerator.dump(FilePathConfig.ASSEMBLY_LANGUAGE_PATH);
     }
 }
